@@ -1,10 +1,7 @@
 class Player
     def hand
     # コンソールを入力待ち状態にし、プレイヤーがコンソールから打ち込んだ値を出力する処理のメソッドの処理をこの中に作成する
-        puts("数字を入力してください。
-0: グー
-1: チョキ
-2: パー")
+        puts("数字を入力してください。", "0: グー", "1: チョキ", "2: パー")
         player_hand = gets.chomp
         
         if player_hand == "0" || player_hand == "1" || player_hand == "2"
@@ -35,6 +32,7 @@ class Janken
     elsif result == 1
         puts "相手の手は#{jankens[enemy_hand]}です。あなたの負けです。"
     else
+        puts "相手の手は#{jankens[enemy_hand]}です。あいこです。"
         player = Player.new
         enemy = Enemy.new
         self.pon(player.hand, enemy.hand)
